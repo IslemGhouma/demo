@@ -12,10 +12,7 @@ pipeline {
           """
         }
       }
-    }
-
-   stages {
-    
+    }  
     stage ("hi") {
 
       steps {
@@ -27,6 +24,6 @@ pipeline {
       }
     }
 
-   }
+   
   }
 }
