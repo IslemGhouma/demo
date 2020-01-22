@@ -6,6 +6,7 @@ pipeline {
     stage ("hello") {
 
       steps {
+        currentBuild.displayName = BUILD_NUMBER + "/" + GIT_BRANCH
         script {
           sh """
             echo "hello"
