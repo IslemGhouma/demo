@@ -8,7 +8,7 @@ pipeline {
       steps {
         script {
           sh """
-            echo "helloooo"
+            echo "hello"
           """
         }
       }
