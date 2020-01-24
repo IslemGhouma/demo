@@ -9,7 +9,9 @@ pipeline {
         script {
           currentBuild.displayName = BUILD_NUMBER + "/" + GIT_BRANCH
           sh """
-            echo "heloo"
+
+            echo "heloo000"
+
           """
         }
       }
