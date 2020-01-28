@@ -7,7 +7,7 @@
   ],
   "labels.0.name": [
     {
-      "pattern": "Feature|Fix|Build|Perf|Refactor|Test|Docs",
+      "pattern": "Feature|Fix|Hotfix|Build|Perf|Refactor|Test|Docs",
       "message": "Please add one of this labels (Feature|Fix|Build|Perf|Refactor|Test|Docs)"
     }
   ]
