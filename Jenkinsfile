@@ -1,31 +1,37 @@
 pipeline {
   agent any
-
   stages {
-    
-    stage ("hello") {
+  
+    stage ("Build application") {
+    parallel {
+        stage("Build front") {
+			steps {
+				script { 
+                sh """
+                 echo "hi,hello"
+                """
+				}
 
-      steps {
+			}
+
+        }
         
-        script {
-          currentBuild.displayName = BUILD_NUMBER + "/" + GIT_BRANCH
-          sh """
-            echo "hello wacefffjjj"
-          """
+		
+        stage("Build back") {
+			steps {
+				script {
+                //In this stage, we build the application
+                sh """
+                  echo hi
+                """
+				}
+            
+			}
+          
         }
-      }
-    }  
-    stage ("hi") {
+	}
 
-      steps {
-        script {
-          sh """
-            echo "hi"
-          """
-        }
       }
     }
-
-   
   }
-}
+
