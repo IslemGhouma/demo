@@ -2,22 +2,7 @@ pipeline {
   agent any
   stages {
   
-    stage ("Build application") {
-    parallel {
-        stage("Build front") {
-			steps {
-				script { 
-                sh """
-                 echo "hi,hello"
-                """
-				}
-
-			}
-
-        }
-        
-		
-        stage("Build back") {
+    stage("Build back") {
 			steps {
 				script {
                 //In this stage, we build the application
@@ -29,9 +14,20 @@ pipeline {
 			}
           
         }
-	}
+    
+    stage("Build front") {
+		steps {
+			script { 
+               def regex = "timeout"
+               if (manager.logContains(regexp)){
+               error ("test skipped")
+                   }
+				}
 
-      }
+			}
+
+        }
+        
+
     }
   }
-
